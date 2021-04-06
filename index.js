@@ -29,10 +29,10 @@ mongoose.connect(connectionString, {
 .catch(error => console.log(error))
 
 app.use(cors({
-    origin: "*",
-    // origin: "http://localhost:3000", // This should be changed to our front-end url
+    // origin: "*",
+    origin: "http://localhost:3000", // This should be changed to our front-end url
     credentials: true
-  }))
+}))
 
 app.use(express.json())
 
