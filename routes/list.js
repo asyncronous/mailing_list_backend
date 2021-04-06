@@ -13,11 +13,17 @@ const { check, validationResult } = require('express-validator')
 //emailer
 const nodemailer = require('nodemailer')
 
+const { config } = require('dotenv');
+config();
+
+const email = process.env.EMAIL  
+const password = process.env.EMAIL_PASSWORD
+
 let transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'mailinglistmailer@gmail.com',
-    pass: 'Tuesday.30'
+    user: email,
+    pass: password
   }
 })
 
