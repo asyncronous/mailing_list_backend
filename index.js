@@ -29,7 +29,7 @@ mongoose.connect(connectionString, {
 .catch(error => console.log(error))
 
 app.use(cors({
-    origin: "https://mailing-list-frontend.herokuapp.com/",
+    origin: "https://mailing-list-frontend.herokuapp.com",
     // origin: "http://localhost:3000", // This should be changed to our front-end url
     credentials: true
 }))
