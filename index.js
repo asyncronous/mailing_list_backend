@@ -28,6 +28,12 @@ mongoose.connect(connectionString, {
 .then(() => console.log("Connected to the database"))
 .catch(error => console.log(error))
 
+app.use(cors({
+    origin: "*",
+    // origin: "http://localhost:3000", // This should be changed to our front-end url
+    credentials: true
+  }))
+
 app.use(express.json())
 
 //routes
