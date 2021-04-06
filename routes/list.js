@@ -44,11 +44,11 @@ router.post("/",
         // console.log(errors.errors)
         if (errors.errors[0].param === "name"){
             console.log("The name field was not valid, must enter a name that is more than 0 characters")
-            return response.status(400).send({error: "The name field was not valid, must enter a name that is more than 0 characters"})
+            return response.status(400).send({"error": "The name field was not valid, must enter a name that is more than 0 characters"})
         }
         else if (errors.errors[0].param === "email"){
             console.log("The email field was not valid, must enter a valid email string")
-            return response.status(400).send({error: "The email field was not valid, must enter a valid email string"})
+            return response.status(400).send({"error": "The email field was not valid, must enter a valid email string"})
         }
     }
     
@@ -67,7 +67,7 @@ router.post("/",
                     response.status(400).send({"error": "Confirmation email failed to send"})
                 } else {
                     console.log('Email sent: ' + info.response)
-                    response.send(item)
+                    response.status(200).send(item)
                 }
             })
         })
@@ -86,11 +86,11 @@ router.post("/send",
         // console.log(errors.errors)
         if (errors.errors[0].param === "subject"){
             console.log("The subject field was not valid, must enter a subject that is more than 0 characters")
-            return response.status(400).send({error: "The subject field was not valid, must enter a subject that is more than 0 characters"})
+            return response.status(400).send({"error": "The subject field was not valid, must enter a subject that is more than 0 characters"})
         }
         else if (errors.errors[0].param === "body"){
             console.log("The body field was not valid, must enter a body that is more than 0 characters")
-            return response.status(400).send({error: "The body field was not valid, must enter a body that is more than 0 characters"})
+            return response.status(400).send({"error": "The body field was not valid, must enter a body that is more than 0 characters"})
         }
     }
     ListItemModel.find()
@@ -109,7 +109,7 @@ router.post("/send",
                         response.status(400).send({"error": "Confirmation email failed to send"})
                     } else {
                         console.log('Email sent: ' + info.response)
-                        response.send(item)
+                        response.status(200).send(item)
                     }
                 })
             })
